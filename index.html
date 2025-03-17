@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Онлайн-замовлення у ресторані</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resume.css">
+</head>
+
+<body>
+    <header>
+        <h1>Меню ресторану</h1>
+        <nav>
+            <ul>
+                <li><a href="#first-course">Перші страви</a></li>
+                <li><a href="#main-course">Основні страви</a></li>
+                <li><a href="#desserts">Десерти</a></li>
+                <li><a href="#drinks">Напої</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <h2>Меню</h2>
+        <section id="first-course">
+            <h3>Перші страви</h3>
+            <div class="menu-item">
+                <img src="soup.jpg" alt="Суп">
+                <div>
+                    <h4>Суп з куркою</h4>
+                    <p>Смачний суп з курячим філе та овочами</p>
+                    <p>Ціна: 80 грн</p>
+                    <button onclick="addToCart('Суп з куркою', 80)">Додати до кошика</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="main-course">
+            <h3>Основні страви</h3>
+            <div class="menu-item">
+                <img src="pizza.jpg" alt="Піца">
+                <div>
+                    <h4>Піца Маргарита</h4>
+                    <p>Класична піца з томатами та моцарелою</p>
+                    <p>Ціна: 150 грн</p>
+                    <button onclick="addToCart('Піца Маргарита', 150)">Додати до кошика</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="desserts">
+            <h3>Десерти</h3>
+            <div class="menu-item">
+                <img src="cake.jpg" alt="Торт">
+                <div>
+                    <h4>Торт Чизкейк</h4>
+                    <p>Ніжний чизкейк з ягодами</p>
+                    <p>Ціна: 100 грн</p>
+                    <button onclick="addToCart('Торт Чизкейк', 100)">Додати до кошика</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="drinks">
+            <h3>Напої</h3>
+            <div class="menu-item">
+                <img src="coffee.jpg" alt="Кава">
+                <div>
+                    <h4>Еспресо</h4>
+                    <p>Сильний еспресо для енергії</p>
+                    <p>Ціна: 40 грн</p>
+                    <button onclick="addToCart('Еспресо', 40)">Додати до кошика</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section id="cart">
+        <h2>Ваш кошик</h2>
+        <div id="cart-items">
+            <p>Ваш кошик порожній.</p>
+        </div>
+        <button onclick="checkout()">Оформити замовлення</button>
+    </section>
+
+    <section id="contact">
+        <h2>Контактна інформація</h2>
+        <p>Телефон: +380 12 345 67 89</p>
+        <p>Адреса: вул. Степана Бандери, 10</p>
+        <p>Графік роботи: 9:00 - 22:00</p>
+    </section>
+
+    <section id="login">
+        <h2>Реєстрація / Вхід</h2>
+        <form id="login-form">
+            <label for="username">Логін:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Увійти</button>
+        </form>
+        <button onclick="resetPassword()">Відновити пароль</button>
+    </section>
+
+    <section id="order">
+        <h2>Оформлення замовлення</h2>
+        <form id="order-form">
+            <label for="delivery">Спосіб доставки:</label>
+            <select id="delivery" name="delivery">
+                <option value="self-pickup">Самовивіз</option>
+                <option value="courier">Кур'єр</option>
+            </select>
+            <label for="payment">Спосіб оплати:</label>
+            <select id="payment" name="payment">
+                <option value="cash">Готівка</option>
+                <option value="online">Онлайн-оплата</option>
+            </select>
+            <button type="submit">Підтвердити замовлення</button>
+        </form>
+    </section>
+
+    <section id="admin">
+        <h2>Панель адміністратора</h2>
+        <button onclick="viewOrders()">Переглянути замовлення</button>
+        <button onclick="updateMenu()">Оновити меню</button>
+    </section>
+
+    <section id="faq">
+        <h2>Часті запитання</h2>
+        <h3>Як оформити замовлення?</h3>
+        <p>Просто виберіть страви з меню та додайте їх до кошика.</p>
+        <h3>Які способи доставки доступні?</h3>
+        <p>Ви можете вибрати самовивіз або доставку кур'єром.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
